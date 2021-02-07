@@ -56,7 +56,7 @@ check_mode=$( grep "^'maintenance' " ${nextcloud_config} | cut -d"'" -f4 )
 if [ "$check_mode" == "false" ] ; then
     echo "Warning: The server was already in production mode"
 else
-    sed -i "s;^'maintenance' => true,;'maintenance' => false," "${nextcloud_config}"
+    sed -i "s;^'maintenance' => true,;'maintenance' => false,;" "${nextcloud_config}"
 fi
 {% endif %}
 
